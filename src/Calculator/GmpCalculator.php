@@ -136,6 +136,10 @@ final class GmpCalculator implements Calculator
             )
         );
 
+        if ($divisionOfRemainder[0] === '-') {
+            $divisionOfRemainder = substr($divisionOfRemainder, 1);
+        }
+
         return gmp_strval($integer).'.'.str_pad($divisionOfRemainder, $this->scale, '0', STR_PAD_LEFT);
     }
 

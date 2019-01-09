@@ -29,4 +29,12 @@ class GmpCalculatorTest extends CalculatorTestCase
     {
         $this->assertSame('0', $this->getCalculator()->floor('0'));
     }
+
+    /**
+     * @test
+     */
+    public function it_divides_bug538()
+    {
+        $this->assertSame('-4.54545454545455', $this->getCalculator()->divide('-500', 110));
+    }
 }
